@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tra cứu sao kê</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/templates/assets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+    ></script>
+  </head>
+  <body>
+    <div class="mx-auto bg-white rounded-lg shadow-md p-6">
+      <header class="header">
+        <img src="/templates//assets/logo.png" alt="Logo Bach Khoa" />
+        <div class="school">
+          <div class="truong">Trường Đại học Bách Khoa</div>
+          <div class="khoa">Khoa Khoa học và Kỹ thuật Máy tính</div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="top">
+          <h1>TRA CỨU DỮ LIỆU SAO KÊ</h1>
+          <p>
+            <b>Nguồn dữ liệu:</b>
+            <a href="https://s.thuanle.me/chuyen_khoan.csv" target="_blank"
+              >https://s.thuanle.me/chuyen_khoan.csv</a
+            >
+          </p>
+        </div>
+        <div class="bot">
+          <!-- <form action="" target="_blank" method="GET" autocomplete="on" novalidate>
+                    <input class="ip1" type="text" name="keywords" placeholder="Nhập từ khóa cần tìm">
+                    <input class="ip2" type="submit" value="Tìm kiếm">
+                </form> -->
+          <div class="flex">
+            <input
+              type="number"
+              id="seachMoney"
+              placeholder=" Số tiền"
+              class="ip0"
+            />
+            <input
+              type="text"
+              id="searchInput"
+              placeholder=" Nhập từ khóa tìm kiếm"
+              class="ip1"
+            />
+            <button id="searchButton" class="ip2" type="submit">
+              Tìm kiếm
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="overflow-x-auto mb-4">
+        <table id="dataTable" class="table-data">
+          <thead>
+            <tr>
+              <th>NGÀY GIAO DỊCH</th>
+              <th>MÃ GIAO DỊCH</th>
+              <th>SỐ TIỀN</th>
+              <th>NỘI DUNG CHUYỂN KHOẢN</th>
+            </tr>
+          </thead>
+
+          <!-- <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody> -->
+        </table>
+      </div>
+
+      <div class="flex flex-row justify-end">
+        <!-- Previous Button -->
+        <button
+          id="prev"
+          disabled
+          class="cursor-not-allowed flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+        >
+          <svg
+            class="w-3.5 h-3.5 me-2 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 5H1m0 0 4 4M1 5l4-4"
+            />
+          </svg>
+          Previous
+        </button>
+        <button
+          id="next"
+          disabled
+          class="cursor-not-allowed flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+        >
+          Next
+          <svg
+            class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="/templates/script.js"></script>
+  </body>
+</html>

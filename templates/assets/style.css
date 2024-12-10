@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #5c6fcc;
+    border-radius: 50px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+body{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.header{
+    display: flex;
+    padding: 30px;
+    background-image: linear-gradient(90deg, #DFDEFF, #A78FFD);
+    align-items: center;
+}
+.header img{
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+.header .school div{
+    font-family: "Alata", serif;
+    color: #072B95;
+}
+.header .school div:nth-child(1){
+    font-size: 18px;
+}
+
+.truong{
+    margin-bottom: 0.05cm;
+}
+
+/* end header */
+
+/* search section */
+.container{
+    margin-bottom: 0.5cm;
+}
+.container h1{
+    font-size: 40px; /* Cỡ chữ là 45px */
+    font-weight: bold; /* Chữ đậm */
+    margin: 0;
+    font-family: "Roboto", serif;
+    color:#072B95;
+    text-align: center;
+}
+.container p{
+    margin: 0;
+    font-family: "Roboto", serif;
+    color:#072B95;
+    text-align: center;
+}
+.container h1{
+    margin-bottom: 5px;
+}
+.container .top{
+    margin-bottom: 18px;
+}
+
+.container{
+    border-radius: 1cap;
+    border: 1.8px solid #6234F0;
+    margin-top: -20px;
+    background-color: #EEEBFE;
+    padding: 25px;
+    width: 100%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container .top a{
+    color:#3F0087;
+}
+.container .top a:hover{
+    color:#6234F0;
+}
+.container .flex{
+    display: flex;
+    justify-content: center;
+}
+.ip0{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    width: 15%;
+    height: 45px;
+    margin-right: 1px;
+    border: 1px solid #A78FFD;
+    border-radius: 0.5cap;
+    padding-left: 10px;
+
+}
+.container .bot .ip1{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    width: 70%;
+    height: 45px;
+    margin-right: 1px;
+    border: 1px solid #A78FFD;
+    border-radius: 0.5cap;
+    padding-left: 10px;
+}
+.container .bot .ip2:hover{
+    background-color:#072B95;
+}
+.container .bot .ip2{
+    color: white;
+    background-color: #3F0087;
+    font-family: "Roboto", serif;
+    height: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 0.35cap;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+}
+/* end search section */
+
+
+/* data-table */
+.table-data{
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.table-data {
+    width: 100%;
+}
+.table-data th{
+    background-color: #3F0087;
+    color: white;
+    padding: 15px;
+    border-right: 1px solid #fff;
+}
+.none{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color:#072B95;
+}
+/* end data-table */
