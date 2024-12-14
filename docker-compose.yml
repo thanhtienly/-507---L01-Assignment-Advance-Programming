@@ -5,7 +5,6 @@ services:
       - "6379:6379"
     container_name: redis-server
   fastapi_app:
-    tty: true
     environment:
       REDIS_HOST: redis
     build:
@@ -19,3 +18,4 @@ services:
       - .:/app
     restart: always
     container_name: fastapi_app
+    command: bash -c "bash prestart.sh && uvicorn app:app --host=0.0.0.0 --port=8000"
