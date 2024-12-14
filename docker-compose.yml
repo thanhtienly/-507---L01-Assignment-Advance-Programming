@@ -1,0 +1,19 @@
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    container_name: redis-server
+  fastapi_app:
+    image: nguyengl03/saokeapp:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    restart: always
+    container_name: fastapi_app

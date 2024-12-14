@@ -2,7 +2,7 @@ import redis
 
 class RedisService:
     def __init__(self):
-        self.r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+        self.r = redis.Redis(host='redis', port=6379, decode_responses=True)
         pass
 
     def set(self, key, value):
