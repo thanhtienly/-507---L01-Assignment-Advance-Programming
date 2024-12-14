@@ -1,24 +1,43 @@
 from modules.csv_reader import CsvReader
+from collections import defaultdict
 import json
-import pandas as pd
+import re 
+import os
+from dotenv import load_dotenv
 
-def sort_raw_file(file_path):
-    # TODO 
-    data = pd.read_csv(file_path)
-    data = data.sort_values(by=["credit"])
-    
-    data.to_csv("sorted_transactions.csv", encoding='utf-8', index = False, header= False)
-    # Read the "chuyen_khoan.csv" file, then sort this file by "credit" column
-    # Write the result to the new file with name "sorted_transactions.csv" without header row.
-    pass
+load_dotenv()
+
+def set_default(obj):
+    if isinstance(obj, set):
+        return list(obj)
+    raise TypeError
+
+
+def preprocess():
+    # Initialize the inverted index
+    inverted_index = defaultdict(set)
+    file_path = os.environ.get("SOURCE_FILE_PATH")
+    file = open(file_path, 'rb')
+    csvReader = CsvReader(file)
+
+    line_offset = 0
+
+    while csvReader.is_eof() is False:
+        raw_text = csvReader.readline()
+        text = raw_text.decode("ascii")
+        text = text.lower()
+        tokens = re.findall(r'\w+', text)
+        tokens = set(tokens)
+        for token in tokens:
+            inverted_index[token].add(line_offset)
+
+        line_offset += len(raw_text)
+
+    index_file_path = os.environ.get("INDEX_FILE_PATH")
+    with open(index_file_path, 'w') as file:
+        json.dump(inverted_index, file, default=set_default)
+
+    return inverted_index
 
 if __name__ == "__main__":
-    file_path = './chuyen_khoan.csv'
-    sort_raw_file(file_path)
-
-    file = open('sorted_transactions.csv', 'rb')
-    csvReader = CsvReader(file)
-    indexes = csvReader.index()
-
-    with open('index.json', 'w') as file:
-        json.dump(indexes, file)
+    preprocess()
